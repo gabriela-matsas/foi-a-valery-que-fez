@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Foi a Valery Que Fez — Bolos, Tortas e Pães Artesanais</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <span class="foi">Foi a</span>
+    <span class="valery">Valery</span>
+    <span class="quefez">que fez</span>
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navMenu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul id="navMenu">
+    <li><a href="cardapio.html">Cardápio</a></li>
+    <li><a href="#galeria">Galeria</a></li>
+    <li><a href="#encomenda">Encomendas</a></li>
+    <li><a href="#contato" class="nav-cta">Fazer encomenda</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <span class="hero-tag">Encomendas artesanais · São Paulo</span>
+    <h1 class="hero-h1">
+      Feito com<br>amor e<br>
+      <em>receita de família</em>
+    </h1>
+    <p class="hero-desc">Bolos, tortas, pães e doces feitos à mão, sob encomenda, com ingredientes selecionados e o carinho de quem cozinha de verdade.</p>
+    <div class="hero-actions">
+      <button class="btn-gold" onclick="document.getElementById('encomenda').scrollIntoView({behavior:'smooth'})">Fazer encomenda</button>
+      <button class="btn-outline-w" onclick="document.getElementById('galeria').scrollIntoView({behavior:'smooth'})">Ver galeria</button>
+    </div>
+    <div class="hero-badges">
+      <div class="badge">
+        <span class="badge-val">🎂</span>
+        <span class="badge-lbl">Bolos & tortas</span>
+      </div>
+      <div class="badge">
+        <span class="badge-val">🍞</span>
+        <span class="badge-lbl">Pães artesanais</span>
+      </div>
+      <div class="badge">
+        <span class="badge-val">🌿</span>
+        <span class="badge-lbl">Opções veganas</span>
+      </div>
+      <div class="badge">
+        <span class="badge-val">🌾</span>
+        <span class="badge-lbl">Sem glúten</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hcell">
+      <img src="bolotamaraemcima.png" alt="Bolo de Nozes e Tâmara" style="width:100%;height:100%;object-fit:cover; object-position:85% center;">
+    </div>
+    <div class="hcell">
+      <img src="tortashimeji.jpg" alt="Torta Shimeji" style="width:100%;height:100%;object-fit:cover;object-position:center 60%;">
+
+    </div>
+    <div class="hcell">
+       <img src="paoredondo.jpeg" alt="Pão Redondo" style="width:100%;height:100%;object-fit:cover;object-position:center 40%;">
+    </div>
+    <div class="hcell">
+      <img src="fotobrigadeiro2.jpeg" alt="brigadeiro" style="width:100%;height:100%;object-fit:cover;object-position:center 40%;">
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about">
+  <div class="about-copy">
+    <p class="eyebrow">Sobre a Valery</p>
+    <h2 class="section-h2">A cozinha que<br><em>virou negócio</em></h2>
+    <p class="about-p">O que começou como paixão pela cozinha tornou-se uma marca querida por quem prova. A Valery cozinha com técnica, afeto e receitas que passam de geração em geração — cada encomenda é feita com atenção especial.</p>
+    <p class="about-p">Do bolo de aniversário à torta salgada do almoço de domingo, dos cookies artesanais ao pão fresquinho, feito à mão — tudo saído das mãos de quem ama o que faz.</p>
+    <div class="about-tags">
+      <span class="tag">Feito à mão</span>
+      <span class="tag">Sob encomenda</span>
+      <span class="tag">Sem glúten disponível</span>
+      <span class="tag">Opções veganas</span>
+      <span class="tag">Culinária árabe</span>
+    </div>
+  </div>
+  <div class="about-visual">
+<img src="kaakfoto3.jpeg" alt="Kaak" style="width:100%;height:100%;object-fit:cover;object-position:center 40%;">
+</div>
+</section>
+
+<!-- CATEGORIES / MENU -->
+<section class="cats" id="cardapio">
+  <p class="eyebrow">Cardápio</p>
+  <h2 class="section-h2">O que a Valery<br><em>prepara pra você</em></h2>
+  <div class="cats-grid">
+    <div class="cat">
+      <button class="cat-header">
+        <div class="cat-icon">🎂</div>
+        <h3>Bolos</h3>
+        <p>Sob encomenda, para aniversário, casamento ou qualquer ocasião especial.</p>
+        <span class="cat-chevron">▾</span>
+      </button>
+      <ul>
+        <li>Brigadeiro</li>
+        <li>Red Velvet</li>
+        <li>Bolo de Mel</li>
+        <li>Kit-Kat</li>
+        <li>Cenoura e Chocolate</li>
+      </ul>
+    </div>
+    <div class="cat">
+      <button class="cat-header">
+        <div class="cat-icon">🥧</div>
+        <h3>Tortas</h3>
+        <p>Abertas e fechadas, doces e salgadas — massa caseira e recheio generoso.</p>
+        <span class="cat-chevron">▾</span>
+      </button>
+      <ul>
+        <li>Aberta de Alho-Poró</li>
+        <li>Fechada de Frango</li>
+        <li>Fechada de Queijo</li>
+        <li>Strudel de Escarola</li>
+      </ul>
+    </div>
+    <div class="cat">
+      <button class="cat-header">
+        <div class="cat-icon">🧆</div>
+        <h3>Salgados & Culinária Árabe</h3>
+        <p>Sambousek e receitas árabes tradicionais, com temperos autênticos.</p>
+        <span class="cat-chevron">▾</span>
+      </button>
+      <ul>
+        <li>Sambousek</li>
+        <li>Falafel <em>(vegano)</em></li>
+        <li>Babaganouche <em>(vegano)</em></li>
+        <li>Hommus</li>
+        <li>Charuto de Folha de Uva</li>
+      </ul>
+    </div>
+    <div class="cat">
+      <button class="cat-header">
+        <div class="cat-icon">🍞</div>
+        <h3>Pães Artesanais</h3>
+        <p>Pães de fermentação natural, com criações exclusivas da casa.</p>
+        <span class="cat-chevron">▾</span>
+      </button>
+      <ul>
+        <li>Pão Challah <em>(trança, círculo, flor ou coração)</em></li>
+        <li>Pão MYS <em>— criação da Valery</em></li>
+      </ul>
+    </div>
+    <div class="cat">
+      <button class="cat-header">
+        <div class="cat-icon">🍪</div>
+        <h3>Biscoitos</h3>
+        <p>Biscoitos artesanais salgados e doces, para acompanhar ou presentear.</p>
+        <span class="cat-chevron">▾</span>
+      </button>
+      <ul>
+        <li>Kaak</li>
+        <li>Amanteigado Doce</li>
+        <li>Cookie de Chocolate e Nozes</li>
+      </ul>
+    </div>
+    <div class="cat">
+      <button class="cat-header">
+        <div class="cat-icon">🍮</div>
+        <h3>Doces</h3>
+        <p>Para presentear, servir em eventos ou só se mimar.</p>
+        <span class="cat-chevron">▾</span>
+      </button>
+      <ul>
+        <li>Brigadeiro <em>(diversos sabores)</em></li>
+        <li>Camafeu de Nozes</li>
+        <li>Pudim de Leite</li>
+      </ul>
+    </div>
+  </div>
+  <div class="cats-cta">
+    <a href="cardapio.html" class="btn-cats-more">Ver cardápio completo →</a>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="galeria">
+  <div class="gal-top">
+    <div>
+      <p class="eyebrow">Galeria</p>
+      <h2 class="section-h2" style="margin-bottom:0">Da nossa cozinha<br><em>para sua mesa</em></h2>
+    </div>
+    <p class="gal-note">Cada peça é única e preparada com ingredientes frescos. As fotos mostram apenas uma parte do que já saiu dessa cozinha 🍰</p>
+  </div>
+  <div class="gal-grid">
+
+    <!-- FOTO GRANDE -->
+    <div class="g g-big">
+      <img src="bolocoracao.jpeg" alt="Bolo Coração" style="width:100%;height:100%;object-fit:cover;object-position:center 50%;">
+      <div class="g-label"><span>Bolo Coração</span><small>chocolate com morangos frescos</small></div>
+    </div>
+
+    <!-- FOTOS PEQUENAS -->
+    <div class="g">
+      <img src="bolotiramissu.jpeg" alt="Bolo Tiramissú" style="width:100%;height:100%;object-fit:cover;object-position:center 30%;">
+      <div class="g-label"><span>Bolo Tiramissú</span><small>com laço dourado</small></div>
+    </div>
+
+    <div class="g">
+      <img src="charutohommusbabaganush.jpeg" alt="Culinária Árabe" style="width:100%;height:100%;object-fit:cover;object-position:center 40%;">
+      <div class="g-label"><span>Culinária Árabe</span><small>charuto, hommus e babaganouche</small></div>
+    </div>
+
+    <div class="g">
+      <img src="tortafechadafoto.png" alt="Torta Fechada" style="width:100%;height:100%;object-fit:cover;object-position:center 60%;">
+      <div class="g-label"><span>Torta Fechada</span><small>massa caseira dourada</small></div>
+    </div>
+
+    <div class="g">
+      <img src="kitkatnovafoto.jpeg" alt="Bolo Kit-Kat" style="width:100%;height:100%;object-fit:cover;object-position:center 35%;">
+      <div class="g-label"><span>Bolo Kit-Kat</span><small>com M&Ms e laço vermelho</small></div>
+    </div>
+
+    <div class="g">
+      <img src="sambousek.png.png" alt="Sambousek" style="width:100%;height:100%;object-fit:cover;object-position:center 40%;">
+      <div class="g-label"><span>Sambousek</span><small>empanada árabe</small></div>
+    </div>
+
+    <div class="g">
+      <img src="falafel.png.png" alt="Falafel" style="width:100%;height:100%;object-fit:cover;object-position:center 30%;">
+      <div class="g-label"><span>Culinária árabe</span><small>Falafel</small></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ENCOMENDA -->
+<section class="encinfo" id="encomenda">
+  <div>
+    <p class="eyebrow">Como encomendar</p>
+    <h2 class="section-h2">Simples como<br><em>um WhatsApp</em></h2>
+    <p class="enc-desc">Todas as encomendas são feitas diretamente pelo WhatsApp. Sem aplicativo, sem complicação — é só mandar uma mensagem e a gente cuida do resto.</p>
+    <div class="enc-steps">
+      <div class="enc-step">
+        <div class="enc-num">01</div>
+        <div class="enc-step-text">
+          <h4>Mande uma mensagem</h4>
+          <p>Diga o que deseja, a data e quantas pessoas vai servir.</p>
+        </div>
+      </div>
+      <div class="enc-step">
+        <div class="enc-num">02</div>
+        <div class="enc-step-text">
+          <h4>Combinamos os detalhes</h4>
+          <p>Personalizamos o pedido conforme sua necessidade e preferência.</p>
+        </div>
+      </div>
+      <div class="enc-step">
+        <div class="enc-num">03</div>
+        <div class="enc-step-text">
+          <h4>Confirmamos e preparamos</h4>
+          <p>Com o pedido confirmado, a Valery começa a preparar com todo cuidado.</p>
+        </div>
+      </div>
+      <div class="enc-step">
+        <div class="enc-num">04</div>
+        <div class="enc-step-text">
+          <h4>Retirada ou entrega</h4>
+          <p>Combinamos a forma de entrega na conversa.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="enc-right">
+    <div class="enc-card highlight">
+      <div class="enc-card-icon">💬</div>
+      <h3>Faça sua encomenda agora</h3>
+      <p>Mande uma mensagem no WhatsApp:<br><a href="https://wa.me/5511978220896">(11) 97822-0896</a></p>
+    </div>
+    <div class="enc-card">
+      <div class="enc-card-icon">⏰</div>
+      <h3>Prazo de antecedência</h3>
+      <p>Encomendas com <strong style="color:#fff">3 dias de antecedência</strong> ou conforme nossa disponibilidade, fale conosco.</p>
+    </div>
+    <div class="enc-card">
+      <div class="enc-card-icon">🌿</div>
+      <h3>Restrições alimentares</h3>
+      <p>Temos opções <strong style="color:#fff">sem glúten</strong> e <strong style="color:#fff">veganas</strong>. Mencione na hora do pedido.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section class="depoimentos">
+  <p class="eyebrow">O que dizem</p>
+  <h2 class="section-h2">Quem provou,<br><em>voltou para pedir mais</em></h2>
+  <div class="dep-grid">
+    <div class="dep">
+      <p class="dep-text">É o melhor falafel do mundo! Sem exageros!</p>
+      <div class="dep-author">Adrian S.</div>
+      <div class="dep-type">Falafel</div>
+    </div>
+    <div class="dep">
+      <p class="dep-text">Foi a Valery que fez??? Mãos de ourooo!!! 👏👏👏</p>
+      <div class="dep-author">Lilia</div>
+    </div>
+    <div class="dep">
+      <p class="dep-text">O melhor bolo do mundo 😍😋</p>
+      <div class="dep-author">Carolina H.</div>
+      <div class="dep-type">Bolo de nozes e frutas secas</div>
+    </div>
+    <div class="dep">
+      <p class="dep-text">Torta deliciosa 😍</p>
+      <div class="dep-author">Geraldine S.</div>
+      <div class="dep-type">Torta de cebola caramelizada e queijo</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-cta" id="contato">
+  <p class="eyebrow">Contato</p>
+  <h2 class="section-h2">Fale com<br><em>a Valery</em></h2>
+  <p class="cta-desc">Atendimento por WhatsApp, todos os dias — em São Paulo, SP. Todas as encomendas são combinadas diretamente por lá.</p>
+  <a class="btn-whatsapp" href="https://wa.me/5511978220896" target="_blank" rel="noopener">
+    <span class="wa-icon">💬</span> Chamar no WhatsApp
+  </a>
+  <div class="cta-extra">
+    <span>@foiavaleryquefez</span>
+    <span class="dot">·</span>
+    <span>(11) 97822-0896</span>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-brand">Foi a Valery Que Fez</div>
+  <p>© 2022–<span id="footYear">2026</span> · Encomendas artesanais · São Paulo, SP</p>
+  <div class="foot-links">
+    <a href="https://www.instagram.com/foiavaleryquefez/" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://wa.me/5511978220896" target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

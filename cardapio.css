@@ -1,0 +1,366 @@
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --burg:#6b1f2a;
+  --burg-deep:#4a1520;
+  --burg-mid:#7d2535;
+  --gold:#c8963a;
+  --gold-light:#e0b85a;
+  --cream:#fdf8f2;
+  --warm:#f8f1e6;
+  --linen:#f0e8d8;
+  --ink:#231510;
+  --muted:#7a5e58;
+  --border:#e2d0c0;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden}
+
+
+.btn-voltar {
+  position: fixed;
+  top: 1.5rem;
+  left: 1.5rem;
+  z-index: 999;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+  border: 1px solid rgba(200,150,58,.4);
+  padding: 10px 20px;
+  background: rgba(74,21,32,.8);
+  backdrop-filter: blur(4px);
+  transition: background .2s;
+}
+
+.btn-voltar:hover {
+  background: var(--burg);
+}
+/* COVER */
+.cover{
+  min-height:100vh;background:var(--burg-deep);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:3rem;position:relative;overflow:hidden;
+}
+.cover::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 50% 50%, rgba(200,150,58,.12) 0%, transparent 65%);
+}
+.cover-ornament{
+  width:120px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  margin:0 auto 2rem;
+}
+.cover-eyebrow{
+  font-size:10px;letter-spacing:5px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:2rem;font-family:'DM Sans',sans-serif;
+}
+.cover-logo-foi{font-size:13px;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.4);font-family:'DM Sans',sans-serif}
+.cover-logo-valery{
+  font-family:'Cormorant Garamond',serif;font-size:clamp(4rem,12vw,8rem);
+  font-style:italic;color:#fff;line-height:.9;font-weight:300;letter-spacing:-1px;
+}
+.cover-logo-quefez{font-size:13px;letter-spacing:6px;text-transform:uppercase;color:var(--gold);margin-top:.5rem;font-family:'DM Sans',sans-serif}
+.cover-divider{
+  width:60px;height:1px;background:var(--gold);
+  margin:2.5rem auto;opacity:.6;
+}
+.cover-tagline{
+  font-family:'Cormorant Garamond',serif;font-size:1.3rem;
+  font-style:italic;color:rgba(255,255,255,.5);
+  letter-spacing:.5px;
+}
+.cover-cta{
+  margin-top:3rem;font-size:10px;letter-spacing:3px;
+  text-transform:uppercase;color:rgba(255,255,255,.25);
+}
+.cover-scroll{
+  position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);
+  font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.2);
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+}
+.cover-scroll::after{
+  content:'';width:1px;height:40px;
+  background:linear-gradient(to bottom,rgba(200,150,58,.4),transparent);
+}
+
+/* SECTION DIVIDER */
+.sec-divider{
+  text-align:center;padding:4.5rem 2rem 3rem;
+  background:var(--burg-deep);position:relative;
+}
+.sec-divider::before{
+  content:'';display:block;width:100%;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(200,150,58,.3),transparent);
+  margin-bottom:3rem;
+}
+.sec-num{
+  font-size:9px;letter-spacing:4px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:.5rem;
+}
+.sec-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2rem,6vw,3.5rem);
+  color:#fff;font-weight:300;line-height:1;
+}
+.sec-title em{font-style:italic;color:var(--gold-light)}
+.sec-sub{
+  font-family:'EB Garamond',serif;font-size:14px;font-style:italic;
+  color:rgba(255,255,255,.35);margin-top:.8rem;
+}
+
+/* CATEGORY BLOCK */
+.cat-block{background:var(--burg-deep);padding:0 0 4rem}
+
+/* ITEMS GRID */
+.items-grid{
+  display:grid;gap:0;
+}
+.items-grid.cols-2{grid-template-columns:1fr 1fr}
+.items-grid.cols-3{grid-template-columns:1fr 1fr 1fr}
+
+.item-card{
+  position:relative;overflow:hidden;
+  background:var(--burg-mid);
+  aspect-ratio:1;
+  display:flex;align-items:flex-end;
+}
+.item-card img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;opacity:.75;
+  transition:opacity .4s,transform .6s;
+}
+.item-card:hover img{opacity:.9;animation-play-state:paused;transform:scale(1.08)}
+.item-card:nth-child(2) img{animation-delay:-4s}
+
+@media (prefers-reduced-motion:no-preference){
+  @keyframes kenburns{
+    0%{transform:scale(1)}
+    100%{transform:scale(1.1)}
+  }
+  .item-card img{animation:kenburns 15s ease-in-out infinite alternate}
+}
+.item-card-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top, rgba(74,21,32,.9) 0%, rgba(74,21,32,.2) 50%, transparent 100%);
+  z-index:1;
+}
+.item-card-body{
+  position:relative;z-index:2;
+  padding:1.5rem;width:100%;
+}
+.item-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.2rem,2.5vw,1.6rem);
+  color:#fff;font-weight:300;line-height:1.1;
+  margin-bottom:.3rem;
+}
+.item-desc{
+  font-family:'EB Garamond',serif;font-size:13px;
+  color:rgba(255,255,255,.55);font-style:italic;
+  line-height:1.5;
+}
+.item-tag{
+  display:inline-block;
+  font-size:9px;letter-spacing:2px;text-transform:uppercase;
+  color:var(--gold);border:1px solid rgba(200,150,58,.4);
+  padding:3px 8px;margin-top:.6rem;
+}
+
+/* TEXT-ONLY LIST ITEMS */
+.list-section{
+  background:var(--burg-deep);
+  padding:3rem 4rem;
+}
+.list-section.light{background:rgba(255,255,255,.03)}
+.list-cols{display:grid;grid-template-columns:1fr 1fr;gap:0 4rem}
+.list-cat-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.5rem;color:var(--gold-light);
+  font-style:italic;font-weight:300;
+  border-bottom:1px solid rgba(200,150,58,.2);
+  padding-bottom:.7rem;margin-bottom:1.2rem;
+}
+.list-items{list-style:none;display:flex;flex-direction:column;gap:.5rem;margin-bottom:2.5rem}
+.list-items li{
+  font-family:'EB Garamond',serif;font-size:15px;
+  color:rgba(255,255,255,.7);
+  padding:.4rem 0;border-bottom:1px solid rgba(255,255,255,.05);
+  display:flex;align-items:center;gap:10px;
+}
+.list-items li::before{
+  content:'';width:4px;height:4px;border-radius:50%;
+  background:var(--gold);opacity:.6;flex-shrink:0;
+}
+.list-items li em{color:rgba(255,255,255,.35);font-size:12px;font-style:italic;margin-left:4px}
+
+/* PHOTO FEATURE — full bleed with text overlay */
+/* --- NOVA ESTRUTURA PARA A FEATURE TORTA --- */
+
+/* --- SECTION FEATURE: TORTA (ESTILO ORNAMENTAL) --- */
+
+/* Estilo específico para o split da torta */
+/* --- LAYOUT SPLIT PARA TORTAS (SAMBOUSEK STYLE) --- */
+
+/* --- LAYOUT SPLIT COM SABORES --- */
+
+.feature-split {
+  display: grid !important;
+  grid-template-columns: 0.6fr 1fr !important;
+  background: var(--burg-deep);
+  min-height: 320px;
+  
+}
+
+.feature-split .split-img img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: 50% 10% !important; /* Mostra a torta sem zoom excessivo */
+}
+.feature-split .split-img {
+  height: 100% !important;
+  overflow: hidden !important;
+}
+
+.feature-split .split-copy {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  padding: 1.5rem 3rem !important;
+}
+
+/* Estilo do cabeçalho do texto */
+.feature-header {
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(200, 150, 58, 0.2);
+  padding-bottom: 1rem;
+}
+
+/* Organização das colunas de sabores */
+.list-cols-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Divide os sabores em 2 colunas */
+  gap: 2rem;
+}
+
+.list-cat-title {
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--gold);
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.8rem;
+}
+
+.list-items {
+  list-style: none;
+  padding: 0;
+}
+
+.list-items li {
+  font-family: 'EB Garamond', serif;
+  color: rgba(255,255,255,0.8);
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+}
+
+/* Fontes do título e descrição */
+.feature-split .split-h {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: 2.5rem !important;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.feature-desc-split {
+  font-family: 'EB Garamond', serif !important;
+  font-style: italic;
+  color: rgba(255,255,255,0.5);
+}
+
+/* Celular: tudo em uma coluna */
+@media (max-width: 768px) {
+  .feature-split { grid-template-columns: 1fr !important; }
+  .list-cols-split { grid-template-columns: 1fr; gap: 1rem; }
+  .feature-split .split-img { height: 350px !important; }
+}
+
+/* SPLIT LAYOUT */
+.split{display:grid;grid-template-columns:1fr 1fr}
+.split-img{overflow:hidden;min-height:380px;position:relative}
+.split-img img{width:100%;height:100%;object-fit:cover;}
+
+.split-copy{
+  background:rgba(255,255,255,.03);
+  padding:3rem 3.5rem;
+  display:flex;flex-direction:column;justify-content:center;
+}
+.split-copy.dark{background:rgba(0,0,0,.15)}
+.split-eyebrow{
+  font-size:9px;letter-spacing:3px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:1rem;
+}
+.split-h{
+  font-family:'Cormorant Garamond',serif;
+  font-size:2rem;color:#fff;font-weight:300;line-height:1.15;
+  margin-bottom:1rem;
+}
+.split-h em{font-style:italic;color:var(--gold-light)}
+.split-list{list-style:none;display:flex;flex-direction:column;gap:.4rem}
+.split-list li{
+  font-family:'EB Garamond',serif;font-size:14px;
+  color:rgba(255,255,255,.6);padding:.35rem 0;
+  border-bottom:1px solid rgba(255,255,255,.05);
+  display:flex;align-items:center;gap:10px;
+}
+.split-list li::before{
+  content:'';width:3px;height:3px;border-radius:50%;
+  background:var(--gold);opacity:.7;flex-shrink:0;
+}
+
+/* BACK COVER */
+.back-cover{
+  background:var(--burg-deep);padding:5rem 3rem;
+  text-align:center;border-top:1px solid rgba(200,150,58,.15);
+}
+.back-logo{
+  font-family:'Cormorant Garamond',serif;font-size:3rem;
+  font-style:italic;color:#fff;font-weight:300;
+}
+.back-gold-line{
+  width:80px;height:1px;background:var(--gold);
+  margin:1.5rem auto;opacity:.5;
+}
+.back-info{
+  font-family:'EB Garamond',serif;font-size:15px;
+  color:rgba(255,255,255,.45);font-style:italic;
+  line-height:2;
+}
+.back-whats{
+  display:inline-block;margin-top:2rem;
+  font-size:11px;letter-spacing:2px;text-transform:uppercase;
+  color:var(--gold);border:1px solid rgba(200,150,58,.4);
+  padding:12px 28px;text-decoration:none;
+}
+
+.item-card img[alt="Falafel"]{object-position:50% 20% !important}
+.item-card img[alt="Brigadeiros"]{object-position:50% 30% !important}
+.item-card img[alt="Bolo de Brigadeiro"]{object-position:50% 32% !important}
+
+/* RESPONSIVO — tablets e celulares */
+@media (max-width:900px){
+  .split{grid-template-columns:1fr}
+  .split-img{min-height:280px}
+  .items-grid.cols-2,.items-grid.cols-3{grid-template-columns:1fr 1fr}
+  .list-section{padding:2.5rem 2rem}
+  .list-cols{grid-template-columns:1fr;gap:0}
+  .sec-divider{padding:3.5rem 1.5rem 2.5rem}
+}
+
+@media (max-width:600px){
+  .btn-voltar{top:1rem;left:1rem;padding:8px 14px;font-size:10px}
+  .items-grid.cols-2,.items-grid.cols-3{grid-template-columns:1fr}
+  .split-copy{padding:2.5rem 1.75rem}
+  .list-section{padding:2.5rem 1.75rem}
+  .back-cover{padding:3.5rem 1.75rem}
+}
