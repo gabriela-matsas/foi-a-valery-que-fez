@@ -2,7 +2,7 @@
 
 Site institucional para uma confeitaria artesanal em São Paulo, com cardápio completo e encomendas via WhatsApp.
 
-🔗 **Site no ar:** https://foiavaleryquefez.netlify.app/
+🔗 **Site no ar:** <img width="1877" height="1002" alt="Captura de tela 2026-09-11 143536" src="https://github.com/user-attachments/assets/ba90a18a-c1a1-4285-839e-57908eece1c8" />
 
 ## Sobre o projeto
 
