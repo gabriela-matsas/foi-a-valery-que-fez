@@ -364,3 +364,101 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);o
   .list-section{padding:2.5rem 1.75rem}
   .back-cover{padding:3.5rem 1.75rem}
 }
+
+/* ===================================================
+   MOBILE — cardápio mais curto (só afeta telas pequenas)
+   =================================================== */
+@media (max-width:900px){
+  .cover{min-height:74vh;padding:3rem 1.5rem}
+  .cover-eyebrow{margin-bottom:1.2rem}
+  .cover-divider{margin:1.6rem auto}
+  .cover-cta{margin-top:1.8rem;line-height:1.9}
+  .cover-scroll{bottom:1.4rem}
+
+  .sec-divider{padding:2.4rem 1.5rem 1.4rem}
+  .sec-divider::before{margin-bottom:1.6rem}
+  .cat-block{padding-bottom:1.6rem}
+
+  /* fotos em duas colunas, quadradas e sem a descrição (ela já aparece na lista) */
+  .items-grid.cols-2,.items-grid.cols-3{grid-template-columns:1fr 1fr}
+  .item-card{aspect-ratio:1/1 !important}
+  .item-card-body{padding:.85rem}
+  .item-name{font-size:1.15rem}
+  .item-desc{display:none}
+  .item-tag{margin-top:.4rem;font-size:8px;padding:2px 6px}
+
+  /* listas mais compactas, em duas colunas */
+  .list-section{padding:1.6rem 1.5rem}
+  .list-cols{grid-template-columns:1fr 1fr;gap:0 1.2rem}
+  .list-items{gap:0;margin-bottom:1rem}
+  .list-items li{font-size:14px;padding:.3rem 0;margin-bottom:0;flex-wrap:wrap;row-gap:0}
+  .list-cat-title{font-size:1.1rem;margin-bottom:.7rem;padding-bottom:.5rem}
+
+  /* blocos foto + texto */
+  .split-img{min-height:0;height:210px}
+  .split-copy{padding:1.6rem 1.5rem}
+  .split-h{font-size:1.6rem;margin-bottom:.6rem}
+  /* Tortas: foto em pé ao lado do texto (como no desktop) */
+  .feature-split{grid-template-columns:.78fr 1fr !important;min-height:0}
+  .feature-split .split-img{height:100% !important;min-height:340px !important}
+  .feature-split .split-img img{object-position:50% 40% !important}
+  .feature-split .split-copy{padding:1.2rem 1.1rem !important}
+  .feature-split .split-h{font-size:1.5rem !important;line-height:1.1}
+  .feature-desc-split{font-size:13px;line-height:1.5}
+  .split-eyebrow{margin-bottom:.6rem}
+  .list-cols-split{grid-template-columns:1fr;gap:.2rem}
+  .feature-split .list-items{margin-bottom:.6rem}
+  .feature-split .list-items li{font-size:15px}
+  .feature-header{margin-bottom:.8rem;padding-bottom:.7rem}
+
+  .back-cover{padding:2.6rem 1.5rem}
+  .back-logo{font-size:2.3rem}
+}
+
+
+/* MOBILE — foto que se dissolve no vinho + mesmo tom de fundo em todas as áreas */
+@media (max-width:900px){
+  .split-copy,.split-copy.dark,.list-section.light{background:var(--burg-deep)}
+  .feature-split{background:var(--burg-deep)}
+
+  /* degradê na borda da foto que encosta no texto */
+  .split-img::after{
+    content:'';position:absolute;inset:0;pointer-events:none;z-index:1;
+    background:linear-gradient(to bottom,rgba(74,21,32,0) 50%,rgba(74,21,32,.55) 78%,var(--burg-deep) 100%);
+  }
+  /* foto depois do texto (Challah): o degradê fica em cima */
+  .split-copy + .split-img::after{
+    background:linear-gradient(to top,rgba(74,21,32,0) 50%,rgba(74,21,32,.55) 78%,var(--burg-deep) 100%);
+  }
+  /* Pães: o challah aparece inteiro, e o kaak vira um bloco à parte (texto primeiro, foto depois) */
+  .split-img--challah{height:auto;aspect-ratio:1/1;min-height:0}
+  .split-img--challah::after{
+    background:linear-gradient(to top,rgba(74,21,32,0) 84%,rgba(74,21,32,.5) 94%,var(--burg-deep) 100%);
+  }
+  .split--kaak{
+    position:relative;display:flex;flex-direction:column;
+    margin-top:2.4rem;border-top:1px solid rgba(200,150,58,.28);
+  }
+  .split--kaak::before{
+    content:"◆";position:absolute;top:-.62rem;left:50%;transform:translateX(-50%);
+    background:var(--burg-deep);color:var(--gold);font-size:.7rem;line-height:1;padding:0 .9rem;z-index:3;
+  }
+  .split--kaak .split-copy{order:-1;padding-top:2rem}
+  .split--kaak .split-img{height:auto;aspect-ratio:1.8/1;min-height:0}
+  .split--kaak .split-img::after{
+    background:linear-gradient(to bottom,var(--burg-deep) 0,rgba(74,21,32,.5) 8%,rgba(74,21,32,0) 24%);
+  }
+
+  /* Sambousek: foto quase quadrada, mostrar bem mais dela */
+  .split-img--sambousek{height:350px}
+  .split-img--sambousek img{object-position:50% 45%}
+  .split-img--sambousek::after{
+    background:linear-gradient(to bottom,rgba(74,21,32,0) 74%,rgba(74,21,32,.5) 90%,var(--burg-deep) 100%);
+  }
+  /* Tortas: foto em pé ao lado do texto; degradê só embaixo, sem fade no lado */
+  .feature-split .split-img::after{
+    background:linear-gradient(to bottom,rgba(74,21,32,0) 0,rgba(74,21,32,0) 74%,rgba(74,21,32,.55) 89%,var(--burg-deep) 100%);
+  }
+  /* painel de texto 'flutua' sobre a foto, com sombra suave na borda */
+  .feature-split .split-copy{position:relative;z-index:3;box-shadow:-14px 0 22px -6px rgba(20,4,10,.55)}
+}
