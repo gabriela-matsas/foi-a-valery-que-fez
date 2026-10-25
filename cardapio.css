@@ -358,7 +358,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);o
 }
 
 @media (max-width:600px){
-  .btn-voltar{top:1rem;left:1rem;padding:8px 14px;font-size:10px}
+  .btn-voltar{top:calc(1rem + env(safe-area-inset-top,0px));left:1rem;padding:8px 14px;font-size:10px}
   .items-grid.cols-2,.items-grid.cols-3{grid-template-columns:1fr}
   .split-copy{padding:2.5rem 1.75rem}
   .list-section{padding:2.5rem 1.75rem}
