@@ -68,8 +68,9 @@ if (depGrid && depBtns.length) {
   };
   depBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      const card = depGrid.querySelector('.dep');
-      const passo = card ? card.offsetWidth + 16 : 320;
+      // anda de "página" em "página": 2 comentários por vez (a largura visível + o espaço entre cartões)
+      const gap = parseFloat(getComputedStyle(depGrid).columnGap) || 16;
+      const passo = depGrid.clientWidth + gap;
       depGrid.scrollBy({ left: btn.dataset.dir === 'next' ? passo : -passo, behavior: 'smooth' });
     });
   });
