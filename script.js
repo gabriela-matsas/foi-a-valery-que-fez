@@ -54,3 +54,26 @@ document.querySelectorAll('.about, .cats, .gallery, .encinfo, .depoimentos, .con
   el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
   observer.observe(el);
 });
+
+// Depoimentos — rolagem lateral com as setinhas (computador)
+const depGrid = document.querySelector('.dep-grid');
+const depBtns = document.querySelectorAll('.dep-nav button');
+if (depGrid && depBtns.length) {
+  const atualizaSetas = () => {
+    const max = depGrid.scrollWidth - depGrid.clientWidth - 2;
+    depBtns.forEach(btn => {
+      const fim = btn.dataset.dir === 'prev' ? depGrid.scrollLeft <= 2 : depGrid.scrollLeft >= max;
+      btn.disabled = fim;
+    });
+  };
+  depBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const card = depGrid.querySelector('.dep');
+      const passo = card ? card.offsetWidth + 16 : 320;
+      depGrid.scrollBy({ left: btn.dataset.dir === 'next' ? passo : -passo, behavior: 'smooth' });
+    });
+  });
+  depGrid.addEventListener('scroll', atualizaSetas, { passive: true });
+  window.addEventListener('resize', atualizaSetas);
+  atualizaSetas();
+}
