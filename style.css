@@ -568,6 +568,9 @@ footer p{font-size:12px;color:rgba(255,255,255,.2)}
   /* 0) Nome da marca em destaque no topo */
   nav{padding:.9rem 1.5rem}
   /* cabeçalho colado no topo e sem nada aparecendo por trás ou por cima dele */
+  /* Safari do iOS 26: a textura de granulado (camada fixa em tela cheia) escondia o cabeçalho
+     do "teste" que o Safari faz no topo e deixava o conteúdo aparecer atrás da hora/bateria */
+  body::before{display:none}
   html{background:var(--cream)}
   :root{--safe-top:env(safe-area-inset-top,0px);--safe-bottom:env(safe-area-inset-bottom,0px)}
   /* o cabeçalho começa no topo real da tela (por trás da hora/bateria do iPhone), com creme atrás */
